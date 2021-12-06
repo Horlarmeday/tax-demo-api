@@ -1,4 +1,4 @@
-import { port } from './config/secret';
+// import { port } from './config/secret';
 import server from './startup/server';
 
-server.listen(port, () => console.log(`Running on port ${port}...`));
+server.listen(process.env.PORT, () => console.log(`Running on port ${process.env.PORT}...`));
