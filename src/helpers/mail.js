@@ -65,7 +65,7 @@ export default function sendUserMail(user, tax) {
         button: {
           color: '#22BC66', // Optional action button color
           text: 'Download',
-          link: `http://localhost:8080/receipt/${tax.id}`,
+          link: `${process.env.EMAIL_URL}/receipt/${tax.id}`,
         },
       },
       outro:
