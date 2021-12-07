@@ -1,5 +1,4 @@
 // import axios from 'axios';
-// import winston from 'winston';
 import Mailgen from 'mailgen';
 import nodemailer from 'nodemailer';
 
@@ -14,6 +13,7 @@ import nodemailer from 'nodemailer';
 //     return new Error('Message failed to send');
 //   }
 // }
+const sender = 'Zamfara Board of Internal Revenue';
 
 const nodeMailerTransport = () => {
   return nodemailer.createTransport({
@@ -29,7 +29,7 @@ const nodeMailerTransport = () => {
 
 const sendMail = (user, emailBody) => {
   const message = {
-    from: `jmaikudigusau@gmail.com`,
+    from: `${sender} <jmaikudigusau@gmail.com>`,
     to: `${user.email}`,
     subject: 'Tax Clearance',
     html: emailBody,
@@ -77,7 +77,7 @@ export default function sendUserMail(user, tax) {
     theme: 'default',
     product: {
       // Appears in header & footer of e-mails
-      name: 'Zamfara Board of Internal Revenue',
+      name: `${sender}`,
       link: 'https://example.com/',
       // Optional product logo
       logo:
