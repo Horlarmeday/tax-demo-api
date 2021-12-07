@@ -29,7 +29,7 @@ const nodeMailerTransport = () => {
 
 const sendMail = (user, emailBody) => {
   const message = {
-    from: `ajaomahmudah@gmail.com`,
+    from: `jmaikudigusau@gmail.com`,
     to: `${user.email}`,
     subject: 'Tax Clearance',
     html: emailBody,
